@@ -31,7 +31,7 @@ namespace Collector.Common.RestContracts
         /// </summary>
         public TResourceIdentifier ResourceIdentifier { get; private set; }
 
-        internal abstract HttpMethod HttpMethod { get; }
+        protected abstract HttpMethod HttpMethod { get; }
     }
 
     /// <summary>
