@@ -7,7 +7,6 @@
 namespace Collector.Common.RestContracts
 {
     using System.Diagnostics.CodeAnalysis;
-    using System.Net.Http;
     using System.Runtime.Serialization;
     using Interfaces;
 
@@ -31,7 +30,7 @@ namespace Collector.Common.RestContracts
         /// </summary>
         public TResourceIdentifier ResourceIdentifier { get; private set; }
 
-        protected abstract HttpMethod HttpMethod { get; }
+        public abstract HttpMethod HttpMethod { get; }
     }
 
     /// <summary>

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorInfo.cs" />
+    <Compile Include="HttpMethod.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Interfaces\IRequest.cs" />
