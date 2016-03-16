@@ -1,0 +1,15 @@
+﻿{
+    "apiVersion": "1.0",
+    "data": null,
+    "error": {
+        "code": "TEST_ERROR_CODE",
+        "message": "Test error",
+        "errors": [
+            {
+                "message": "Test error message",
+                "reason": "TestException"
+            }
+        ]
+    },
+    "id": "9838FACF-30BB-42D2-90B6-3D67ADF08058"
+}
