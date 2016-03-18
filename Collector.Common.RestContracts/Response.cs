@@ -16,10 +16,11 @@ namespace Collector.Common.RestContracts
         /// Initializes a new instance of the <see cref="Response{T}" /> class.
         /// </summary>
         /// <param name="apiVersion">The api version.</param>
+        /// <param name="context">The context.</param>
         /// <param name="id">The correlation id.</param>
         /// <param name="data">The response data.</param>
-        public Response(string apiVersion, string id, T data)
-            : this(apiVersion, id)
+        public Response(string apiVersion, string context, string id, T data)
+            : this(apiVersion, id, context)
         {
             Data = data;
         }
@@ -28,10 +29,11 @@ namespace Collector.Common.RestContracts
         /// Initializes a new instance of the <see cref="Response{T}"/> class.
         /// </summary>
         /// <param name="apiVersion">The api version.</param>
+        /// <param name="context">The context.</param>
         /// <param name="id">The correlation id.</param>
         /// <param name="error">The error.</param>
-        public Response(string apiVersion, string id, Error error)
-            : this(apiVersion, id)
+        public Response(string apiVersion, string context, string id, Error error)
+            : this(apiVersion, id, context)
         {
             Error = error;
         }
@@ -39,11 +41,20 @@ namespace Collector.Common.RestContracts
         /// <summary>
         /// Initializes a new instance of the <see cref="Response{T}"/> class.
         /// </summary>
+        public Response()
+        {            
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Response{T}"/> class.
+        /// </summary>
         /// <param name="apiVersion">The api version.</param>
+        /// <param name="context">The context.</param>
         /// <param name="id">The correlation id.</param>
-        private Response(string apiVersion, string id)
+        private Response(string apiVersion, string id, string context)
         {
             ApiVersion = apiVersion;
+            Context = context;
             Id = id;
         }
 
@@ -51,6 +62,11 @@ namespace Collector.Common.RestContracts
         /// Gets the api version.
         /// </summary>
         public string ApiVersion { get; }
+
+        /// <summary>
+        /// Gets the context.
+        /// </summary>
+        public string Context { get; }
 
         /// <summary>
         /// Gets the response data.

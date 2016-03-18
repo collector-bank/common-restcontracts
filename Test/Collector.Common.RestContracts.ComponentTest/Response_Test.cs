@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using ApprovalTests.Reporters;
+
 namespace Collector.Common.RestContracts.ComponentTest
 {
     using ApprovalTests;
@@ -31,6 +33,7 @@ namespace Collector.Common.RestContracts.ComponentTest
                     new Response<object>(
                         apiVersion: "1.0",
                         id: "9838FACF-30BB-42D2-90B6-3D67ADF08058",
+                        context: "123",
                         error:
                             new Error(
                                 code: "TEST_ERROR_CODE",
@@ -45,7 +48,7 @@ namespace Collector.Common.RestContracts.ComponentTest
                 _jsonResponse = JsonConvert.SerializeObject(_response, _jsonSerializerSettings);
             }
 
-            [Test]
+            [Test]           
             [UseApprovalSubdirectory("ApprovalFiles")]
             public void The_response_is_serialized_to_the_expected_format()
             {
@@ -66,6 +69,7 @@ namespace Collector.Common.RestContracts.ComponentTest
 
                 _response = new Response<string>(
                     apiVersion: "1.0",
+                    context: "123",
                     id: "7E1589C9-8438-4CDB-8957-0001E1EEF833",
                     data: "Test successfull!");
 

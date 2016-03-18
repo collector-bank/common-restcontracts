@@ -1,5 +1,6 @@
 ﻿{
     "apiVersion": "1.0",
+    "context": "123",
     "data": "Test successfull!",
     "error": null,
     "id": "7E1589C9-8438-4CDB-8957-0001E1EEF833"

@@ -11,9 +11,28 @@ namespace Collector.Common.RestContracts
     using Interfaces;
 
     /// <summary>
+    /// Base request with response.
+    /// </summary>
+    /// <typeparam name="TResourceIdentifier">The type of the resource identifier.</typeparam>
+    /// <typeparam name="TResponse">The type of the response.</typeparam>
+    // ReSharper disable once UnusedTypeParameter
+    public abstract class RequestBase<TResourceIdentifier, TResponse> : RequestBase<TResourceIdentifier>
+        where TResourceIdentifier : class, IResourceIdentifier
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestBase{TResourceIdentifier, TResponse}"/> class.
+        /// </summary>
+        /// <param name="resourceIdentifier"></param>
+        protected RequestBase(TResourceIdentifier resourceIdentifier) : base(resourceIdentifier)
+        {
+        }
+    }
+
+    /// <summary>
     /// Base request without response.
     /// </summary>
     /// <typeparam name="TResourceIdentifier">The type of the resource identifier.</typeparam>
+    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "Reviewed. Suppression is OK here.")]
     public abstract class RequestBase<TResourceIdentifier> : IRequest
            where TResourceIdentifier : class, IResourceIdentifier
     {
@@ -30,25 +49,8 @@ namespace Collector.Common.RestContracts
         /// </summary>
         public TResourceIdentifier ResourceIdentifier { get; private set; }
 
-        public abstract HttpMethod HttpMethod { get; }
-    }
+        public string Context { get; set; }
 
-    /// <summary>
-    /// Base request with response.
-    /// </summary>
-    /// <typeparam name="TResourceIdentifier">The type of the resource identifier.</typeparam>
-    /// <typeparam name="TResponse">The type of the response.</typeparam>
-    // ReSharper disable once UnusedTypeParameter
-    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "Reviewed. Suppression is OK here.")]
-    public abstract class RequestBase<TResourceIdentifier, TResponse> : RequestBase<TResourceIdentifier>
-        where TResourceIdentifier : class, IResourceIdentifier
-    {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequestBase{TResourceIdentifier, TResponse}"/> class.
-        /// </summary>
-        /// <param name="resourceIdentifier"></param>
-        protected RequestBase(TResourceIdentifier resourceIdentifier) : base(resourceIdentifier)
-        {            
-        }
+        public abstract HttpMethod HttpMethod { get; }
     }
 }

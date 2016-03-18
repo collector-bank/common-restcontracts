@@ -1,5 +1,6 @@
 ﻿{
     "apiVersion": "1.0",
+    "context": "123",
     "data": null,
     "error": {
         "code": "TEST_ERROR_CODE",
