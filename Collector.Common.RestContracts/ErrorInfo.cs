@@ -23,6 +23,13 @@ namespace Collector.Common.RestContracts
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorInfo"/> class.
+        /// </summary>
+        public ErrorInfo()
+        {
+        }
+
+        /// <summary>
         /// Gets the error message.
         /// </summary>
         public string Message { get; set; }

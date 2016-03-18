@@ -27,6 +27,13 @@ namespace Collector.Common.RestContracts
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Error"/> class.
+        /// </summary>
+        public Error()
+        {            
+        }
+
+        /// <summary>
         /// Gets the code.
         /// </summary>
         public string Code { get; set; }
