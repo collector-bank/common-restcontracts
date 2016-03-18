@@ -25,11 +25,11 @@ namespace Collector.Common.RestContracts
         /// <summary>
         /// Gets the error message.
         /// </summary>
-        public string Message { get; }
+        public string Message { get; set; }
 
         /// <summary>
         /// Gets the error reason. 
         /// </summary>
-        public string Reason { get; }
+        public string Reason { get; set; }
     }
 }

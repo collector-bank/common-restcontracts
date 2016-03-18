@@ -29,16 +29,16 @@ namespace Collector.Common.RestContracts
         /// <summary>
         /// Gets the code.
         /// </summary>
-        public string Code { get; }
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets the message.
         /// </summary>
-        public string Message { get; }
+        public string Message { get; set; }
 
         /// <summary>
         /// Gets the additional information about the errors.
         /// </summary>
-        public IEnumerable<ErrorInfo> Errors { get; }
+        public IEnumerable<ErrorInfo> Errors { get; set; }
     }
 }

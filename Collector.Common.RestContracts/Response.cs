@@ -61,26 +61,26 @@ namespace Collector.Common.RestContracts
         /// <summary>
         /// Gets the api version.
         /// </summary>
-        public string ApiVersion { get; }
+        public string ApiVersion { get; set; }
 
         /// <summary>
         /// Gets the context.
         /// </summary>
-        public string Context { get; }
+        public string Context { get; set; }
 
         /// <summary>
         /// Gets the response data.
         /// </summary>
-        public T Data { get; }
+        public T Data { get; set; }
 
         /// <summary>
         /// Gets the error.
         /// </summary>
-        public Error Error { get; }
+        public Error Error { get; set; }
 
         /// <summary>
         /// Gets the correlation id.
         /// </summary>
-        public string Id { get; }
+        public string Id { get; set; }
     }
 }
