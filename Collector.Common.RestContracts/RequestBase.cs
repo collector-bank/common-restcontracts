@@ -36,21 +36,31 @@ namespace Collector.Common.RestContracts
     public abstract class RequestBase<TResourceIdentifier> : IRequest
            where TResourceIdentifier : class, IResourceIdentifier
     {
+        private readonly TResourceIdentifier _resourceIdentifier;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestBase{TResourceIdentifier}"/> class.
         /// </summary>
         protected RequestBase(TResourceIdentifier resourceIdentifier)
         {
-            ResourceIdentifier = resourceIdentifier ?? (TResourceIdentifier)FormatterServices.GetUninitializedObject(typeof(TResourceIdentifier));
+            _resourceIdentifier = resourceIdentifier ?? (TResourceIdentifier)FormatterServices.GetUninitializedObject(typeof(TResourceIdentifier));
         }
+
+        /// <summary>
+        /// Gets thhe context.
+        /// </summary>
+        public string Context { get; set; }
+
+        /// <summary>
+        /// Gets the Http method.
+        /// </summary>
+        /// <returns>The Http method.</returns>
+        public abstract HttpMethod GetHttpMethod();
 
         /// <summary>
         /// Gets the resource identifier.
         /// </summary>
-        public TResourceIdentifier ResourceIdentifier { get; private set; }
-
-        public string Context { get; set; }
-
-        public abstract HttpMethod GetHttpMethod();
+        /// <returns></returns>
+        public TResourceIdentifier GetResourceIdentifier() => _resourceIdentifier;
     }
 }
