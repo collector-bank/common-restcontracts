@@ -11,9 +11,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Collector.Common.RestContracts")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Common contract definition for Rest API.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Collector Bank AB")]
 [assembly: AssemblyProduct("Collector.Common.RestContracts")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
