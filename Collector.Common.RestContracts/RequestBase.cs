@@ -36,7 +36,9 @@ namespace Collector.Common.RestContracts
     public abstract class RequestBase<TResourceIdentifier> : IRequest
            where TResourceIdentifier : class, IResourceIdentifier
     {
-        private readonly TResourceIdentifier _resourceIdentifier;
+        // ReSharper disable once FieldCanBeMadeReadOnly.Local
+        // Needs to be set by reflection in the Request Binder
+        private TResourceIdentifier _resourceIdentifier;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestBase{TResourceIdentifier}"/> class.
