@@ -50,7 +50,5 @@ namespace Collector.Common.RestContracts
         public TResourceIdentifier ResourceIdentifier { get; private set; }
 
         public string Context { get; set; }
-
-        public abstract HttpMethod HttpMethod { get; }
     }
 }
