@@ -64,5 +64,11 @@ namespace Collector.Common.RestContracts
         /// </summary>
         /// <returns></returns>
         public TResourceIdentifier GetResourceIdentifier() => _resourceIdentifier;
+
+        /// <summary>
+        /// Gets the key for loading base URL, authentification logic, logging etc..
+        /// </summary>
+        /// <returns>The configuration key name.</returns>
+        public abstract string GetConfigurationKey();
     }
 }
