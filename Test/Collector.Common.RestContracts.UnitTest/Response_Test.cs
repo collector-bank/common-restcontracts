@@ -15,7 +15,7 @@ namespace Collector.Common.RestContracts.UnitTest
         [Test]
         public void It_returns_null_if_Data_is_read_when_response_has_errors()
         {
-            var response = new Response<object>(apiVersion: string.Empty, context: string.Empty, id: string.Empty, error: new Error("code"));
+            var response = new Response<object>(apiVersion: string.Empty, context: string.Empty, correlationId: string.Empty, error: new Error("code"));
 
             Assert.IsNull(response.Data);
         }
@@ -24,7 +24,7 @@ namespace Collector.Common.RestContracts.UnitTest
         public void It_returns_the_data_object_when_response_has_no_errors()
         {
             var data = new object();
-            var response = new Response<object>(apiVersion: string.Empty, context: string.Empty, id: string.Empty, data: data);
+            var response = new Response<object>(apiVersion: string.Empty, context: string.Empty, correlationId: string.Empty, data: data);
 
             Assert.AreSame(data, response.Data);
         }
