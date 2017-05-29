@@ -17,7 +17,7 @@ namespace Collector.Common.RestContracts
         /// </summary>
         /// <param name="apiVersion">The api version.</param>
         /// <param name="context">The context.</param>
-        /// <param name="id">The correlation id.</param>
+        /// <param name="id">The correlation correlationId.</param>
         /// <param name="data">The response data.</param>
         public Response(string apiVersion, string context, string id, T data)
             : this(apiVersion, id, context)
@@ -30,7 +30,7 @@ namespace Collector.Common.RestContracts
         /// </summary>
         /// <param name="apiVersion">The api version.</param>
         /// <param name="context">The context.</param>
-        /// <param name="id">The correlation id.</param>
+        /// <param name="id">The correlation correlationId.</param>
         /// <param name="error">The error.</param>
         public Response(string apiVersion, string context, string id, Error error)
             : this(apiVersion, id, context)
@@ -50,12 +50,12 @@ namespace Collector.Common.RestContracts
         /// </summary>
         /// <param name="apiVersion">The api version.</param>
         /// <param name="context">The context.</param>
-        /// <param name="id">The correlation id.</param>
-        private Response(string apiVersion, string id, string context)
+        /// <param name="correlationId">The correlation correlationId.</param>
+        private Response(string apiVersion, string correlationId, string context)
         {
             ApiVersion = apiVersion;
             Context = context;
-            Id = id;
+            CorrelationId = correlationId;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Collector.Common.RestContracts
         public Error Error { get; set; }
 
         /// <summary>
-        /// Gets the correlation id.
+        /// Gets the correlation correlationId.
         /// </summary>
-        public string Id { get; set; }
+        public string CorrelationId { get; set; }
     }
 }
