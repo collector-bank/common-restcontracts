@@ -6,7 +6,9 @@
 
 namespace Collector.Common.RestContracts
 {
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
     using System.Runtime.Serialization;
     using Interfaces;
 
@@ -70,5 +72,23 @@ namespace Collector.Common.RestContracts
         /// </summary>
         /// <returns>The configuration key name.</returns>
         public abstract string GetConfigurationKey();
+
+        /// <summary>
+        /// Validates the request.
+        /// </summary>
+        /// <returns>A list of validation error infos.</returns>
+        public virtual IEnumerable<ErrorInfo> GetValidationErrors()
+        {
+            return ValidateRequest()?.Select(reason => new ErrorInfo(reason, "VALIDATION_ERROR"));
+        }
+
+        /// <summary>
+        /// Validates the request.
+        /// </summary>
+        /// <returns>A list of validation errors</returns>
+        protected virtual IEnumerable<string> ValidateRequest()
+        {
+            return Enumerable.Empty<string>();
+        }
     }
 }
