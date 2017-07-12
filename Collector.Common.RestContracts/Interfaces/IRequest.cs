@@ -14,6 +14,11 @@ namespace Collector.Common.RestContracts.Interfaces
     public interface IRequest
     {
         /// <summary>
+        /// Gets the context.
+        /// </summary>
+        string Context { get; set; }
+
+        /// <summary>
         /// Gets the Http method.
         /// </summary>
         /// <returns>The Http method.</returns>
@@ -30,5 +35,13 @@ namespace Collector.Common.RestContracts.Interfaces
         /// </summary>
         /// <returns>A list of validation error infos.</returns>
         IEnumerable<ErrorInfo> GetValidationErrors();
+    }
+
+    public interface IRequest<out TResourceIdentifier> : IRequest where TResourceIdentifier : class, IResourceIdentifier
+    {
+        /// <summary>
+        /// Gets the resource identifier.
+        /// </summary>
+        TResourceIdentifier GetResourceIdentifier();
     }
 }

@@ -35,7 +35,7 @@ namespace Collector.Common.RestContracts
     /// </summary>
     /// <typeparam name="TResourceIdentifier">The type of the resource identifier.</typeparam>
     [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "Reviewed. Suppression is OK here.")]
-    public abstract class RequestBase<TResourceIdentifier> : IRequest
+    public abstract class RequestBase<TResourceIdentifier> : IRequest<TResourceIdentifier>
            where TResourceIdentifier : class, IResourceIdentifier
     {
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
@@ -51,7 +51,7 @@ namespace Collector.Common.RestContracts
         }
 
         /// <summary>
-        /// Gets thhe context.
+        /// Gets the context.
         /// </summary>
         public string Context { get; set; }
 
