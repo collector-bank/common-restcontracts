@@ -4,21 +4,17 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-using ApprovalTests.Reporters;
-
 namespace Collector.Common.RestContracts.ComponentTest
 {
     using ApprovalTests;
     using ApprovalTests.Namers;
-    using Common.ComponentTest.Helpers.ApprovalExtensions.Namers;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;
-    using NUnit.Framework;
+    using Xunit;
 
-    [TestFixture]
+
     public class Response_Test
     {
-        [TestFixture]
         public class When_response_has_error : BaseComponentTest
         {
             private Response<object> _response;
@@ -27,8 +23,6 @@ namespace Collector.Common.RestContracts.ComponentTest
 
             protected override void Setup()
             {
-                Approvals.RegisterDefaultNamerCreation(() => new HashCodeNamer());
-
                 _response =
                     new Response<object>(
                         apiVersion: "1.0",
@@ -48,7 +42,7 @@ namespace Collector.Common.RestContracts.ComponentTest
                 _jsonResponse = JsonConvert.SerializeObject(_response, _jsonSerializerSettings);
             }
 
-            [Test]           
+            [Fact]           
             [UseApprovalSubdirectory("ApprovalFiles")]
             public void The_response_is_serialized_to_the_expected_format()
             {
@@ -56,7 +50,6 @@ namespace Collector.Common.RestContracts.ComponentTest
             }
         }
 
-        [TestFixture]
         public class When_response_has_data : BaseComponentTest
         {
             private Response<string> _response;
@@ -65,8 +58,6 @@ namespace Collector.Common.RestContracts.ComponentTest
 
             protected override void Setup()
             {
-                Approvals.RegisterDefaultNamerCreation(() => new HashCodeNamer());
-
                 _response = new Response<string>(
                     apiVersion: "1.0",
                     context: "123",
@@ -81,7 +72,7 @@ namespace Collector.Common.RestContracts.ComponentTest
                 _jsonResponse = JsonConvert.SerializeObject(_response, _jsonSerializerSettings);
             }
 
-            [Test]
+            [Fact]
             [UseApprovalSubdirectory("ApprovalFiles")]
             public void The_response_is_serialized_to_the_expected_format()
             {

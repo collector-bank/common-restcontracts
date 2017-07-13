@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="RequestBase.cs" company="Collector AB">
-//   Copyright © Collector AB. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Collector.Common.RestContracts
+﻿namespace Collector.Common.RestContracts
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
@@ -68,7 +62,7 @@ namespace Collector.Common.RestContracts
         public TResourceIdentifier GetResourceIdentifier() => _resourceIdentifier;
 
         /// <summary>
-        /// Gets the key for loading base URL, authentification logic, logging etc..
+        /// Gets the key for loading base URL, authentication logic, logging etc..
         /// </summary>
         /// <returns>The configuration key name.</returns>
         public abstract string GetConfigurationKey();
@@ -76,7 +70,7 @@ namespace Collector.Common.RestContracts
         /// <summary>
         /// Validates the request.
         /// </summary>
-        /// <returns>A list of validation error infos.</returns>
+        /// <returns>A list of validation error info's.</returns>
         public virtual IEnumerable<ErrorInfo> GetValidationErrors()
         {
             return ValidateRequest()?.Select(reason => new ErrorInfo(reason, "VALIDATION_ERROR"));

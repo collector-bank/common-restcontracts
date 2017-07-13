@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IResourceIdentifier.cs" company="Collector AB">
-//   Copyright © Collector AB. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Collector.Common.RestContracts.Interfaces
+﻿namespace Collector.Common.RestContracts.Interfaces
 {
     /// <summary>
     /// The interface used for identifying a resource

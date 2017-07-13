@@ -1,32 +1,24 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Response_Test.cs" company="Collector AB">
-//   Copyright © Collector AB. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Collector.Common.RestContracts.UnitTest
+﻿namespace Collector.Common.RestContracts.UnitTest
 {
-    using Common.UnitTest.Helpers;
-    using NUnit.Framework;
+    using Xunit;
 
-    [TestFixture]
-    public class Response_Test : BaseUnitTest
+    public class Response_Test
     {
-        [Test]
+        [Fact]
         public void It_returns_null_if_Data_is_read_when_response_has_errors()
         {
             var response = new Response<object>(apiVersion: string.Empty, context: string.Empty, correlationId: string.Empty, error: new Error("code"));
 
-            Assert.IsNull(response.Data);
+            Assert.Null(response.Data);
         }
 
-        [Test]
+        [Fact]
         public void It_returns_the_data_object_when_response_has_no_errors()
         {
             var data = new object();
             var response = new Response<object>(apiVersion: string.Empty, context: string.Empty, correlationId: string.Empty, data: data);
 
-            Assert.AreSame(data, response.Data);
+            Assert.Same(data, response.Data);
         }
     }
 }

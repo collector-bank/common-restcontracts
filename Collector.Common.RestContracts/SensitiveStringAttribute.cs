@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Error.cs" company="Collector AB">
-//   Copyright © Collector AB. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Collector.Common.RestContracts
+﻿namespace Collector.Common.RestContracts
 {
     using System;
 

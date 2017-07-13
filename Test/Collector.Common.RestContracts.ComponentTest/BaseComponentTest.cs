@@ -10,7 +10,6 @@ namespace Collector.Common.RestContracts.ComponentTest
     using System.Diagnostics;
     using System.Globalization;
     using System.Threading;
-    using NUnit.Framework;
 
     /// <summary>
     /// A testing base class using a 'Setup - Act - Assert' pattern.
@@ -43,7 +42,6 @@ namespace Collector.Common.RestContracts.ComponentTest
         {
         }
 
-        [TestFixtureSetUp]
         protected void TestInitializer()
         {
             try
@@ -70,7 +68,6 @@ namespace Collector.Common.RestContracts.ComponentTest
             }
         }
 
-        [TestFixtureTearDown]
         protected void TestFinalizer()
         {
             TearDown();

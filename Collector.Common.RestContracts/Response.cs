@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Response.cs" company="Collector AB">
-//   Copyright © Collector AB. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Collector.Common.RestContracts
+﻿namespace Collector.Common.RestContracts
 {
     /// <summary>
     /// Generic REST response inspired by the Google JSON Style Guide https://google.github.io/styleguide/jsoncstyleguide.xml.
