@@ -6,9 +6,9 @@
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-		<Version>4.2.1</Version>
+		<Version>5.0.0</Version>
 		<Description>Base rest contracts to be used with Common RestClient and WebApi</Description>
-		<Authors>Heimdal, Houdini</Authors>
+		<Authors>Team Heimdal, Team Houdini</Authors>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<RepositoryUrl>https://github.com/collector-bank/common-restcontracts</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
