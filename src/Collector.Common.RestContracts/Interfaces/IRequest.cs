@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IRequest.cs" company="Collector AB">
-//   Copyright © Collector AB. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Collector.Common.RestContracts.Interfaces
+﻿namespace Collector.Common.RestContracts.Interfaces
 {
     using System.Collections.Generic;
 
@@ -25,7 +19,7 @@ namespace Collector.Common.RestContracts.Interfaces
         HttpMethod GetHttpMethod();
 
         /// <summary>
-        /// Gets the key for loading base URL, authentification logic, logging etc..
+        /// Gets the key for loading base URL, authentication logic, logging etc..
         /// </summary>
         /// <returns>The configuration key name.</returns>
         string GetConfigurationKey();
@@ -33,7 +27,7 @@ namespace Collector.Common.RestContracts.Interfaces
         /// <summary>
         /// Validates the request.
         /// </summary>
-        /// <returns>A list of validation error infos.</returns>
+        /// <returns>A list of validation error info's.</returns>
         IEnumerable<ErrorInfo> GetValidationErrors();
     }
 
