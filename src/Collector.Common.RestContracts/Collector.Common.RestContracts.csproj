@@ -14,7 +14,5 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageProjectUrl>https://github.com/collector-bank/common-restcontracts</PackageProjectUrl>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-		<AssemblyVersion>4.2.1.0</AssemblyVersion>
-		<FileVersion>4.2.1.0</FileVersion>
 	</PropertyGroup>
 </Project>
