@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{402469BF-013B-4843-8EEA-210ACF578411}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collector.Common.RestContracts", "src\Collector.Common.RestContracts\Collector.Common.RestContracts.csproj", "{AA88F2DB-A552-417A-A4F9-37FD7C12A825}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collector.Common.RestContracts", "src\Collector.Common.RestContracts\Collector.Common.RestContracts.csproj", "{CEACEBDF-D5E6-447C-814E-0583AEC8872B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,15 +13,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA88F2DB-A552-417A-A4F9-37FD7C12A825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA88F2DB-A552-417A-A4F9-37FD7C12A825}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA88F2DB-A552-417A-A4F9-37FD7C12A825}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA88F2DB-A552-417A-A4F9-37FD7C12A825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEACEBDF-D5E6-447C-814E-0583AEC8872B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEACEBDF-D5E6-447C-814E-0583AEC8872B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEACEBDF-D5E6-447C-814E-0583AEC8872B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEACEBDF-D5E6-447C-814E-0583AEC8872B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{AA88F2DB-A552-417A-A4F9-37FD7C12A825} = {402469BF-013B-4843-8EEA-210ACF578411}
+		{CEACEBDF-D5E6-447C-814E-0583AEC8872B} = {402469BF-013B-4843-8EEA-210ACF578411}
 	EndGlobalSection
 EndGlobal
