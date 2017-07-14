@@ -14,5 +14,6 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageProjectUrl>https://github.com/collector-bank/common-restcontracts</PackageProjectUrl>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	  <PackageIconUrl>https://raw.githubusercontent.com/collector-bank/common-restcontracts/master/icon.png</PackageIconUrl>
 	</PropertyGroup>
 </Project>
