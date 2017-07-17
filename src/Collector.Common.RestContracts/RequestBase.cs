@@ -14,6 +14,7 @@
     // ReSharper disable once UnusedTypeParameter
     public abstract class RequestBase<TResourceIdentifier, TResponse> : RequestBase<TResourceIdentifier>
         where TResourceIdentifier : class, IResourceIdentifier
+        where TResponse : class
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestBase{TResourceIdentifier, TResponse}"/> class.
