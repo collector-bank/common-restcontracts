@@ -48,7 +48,7 @@
         /// <summary>
         /// Gets the context.
         /// </summary>
-        public string Context { get; set; }
+        public virtual string Context { get; set; }
 
         /// <summary>
         /// Gets the Http method.
