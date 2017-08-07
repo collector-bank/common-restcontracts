@@ -22,7 +22,7 @@ public class MyEndpointResourceIdentifier : IResourceIdentifier
 ```
 
 ### Usage without response
-Subclass the  RequestBase<TIidentifier> class and provide your resource identifier.
+Subclass the  RequestBase<TIidentifier> class and provide your resource identifier, the HTTPMethod, and the ConfigurationKey, normally, all requests to the same api should normally have the same configuration key (more on this, can be found in Common.RestClient).
 Example PUT request, (No response object):
 
 ```csharp
@@ -44,7 +44,7 @@ public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<My
 ```
 
 ### Usage with response 
-Subclass the abstract RequestBase<TIidentifier, TResponse>, and provide your response type
+Subclass the abstract RequestBase<TIidentifier, TResponse>, and provide your response type.
 
 ```csharp
 public class MyEndpointGETRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier, MyEndpointGetResponse> 
