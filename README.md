@@ -29,7 +29,7 @@ Example PUT request, (No response object):
 ```csharp
 public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier> 
 {
-	protected MyEndpointRequest(MyEndpointResourceIdentifier resourceIdentifier)
+	public MyEndpointPUTRequest(MyEndpointResourceIdentifier resourceIdentifier)
 		: base(resourceIdentifier)
 	{
 	}
@@ -50,7 +50,7 @@ Subclass the abstract RequestBase<TIidentifier, TResponse>, and provide your res
 ```csharp
 public class MyEndpointGETRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier, MyEndpointGetResponse> 
 {
-	protected MyEndpointRequest(MyEndpointResourceIdentifier resourceIdentifier)
+	public MyEndpointGETRequest(MyEndpointResourceIdentifier resourceIdentifier)
 		: base(resourceIdentifier)
 	{
 	}
@@ -78,7 +78,7 @@ In order to provide a validator to for the Request, override the ValidateRequest
 ```csharp
 public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier> 
 {
-	protected MyEndpointRequest(MyEndpointResourceIdentifier resourceIdentifier)
+	public MyEndpointPUTRequest(MyEndpointResourceIdentifier resourceIdentifier)
 		: base(resourceIdentifier)
 	{
 	}
