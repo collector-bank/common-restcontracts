@@ -3,13 +3,13 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/1dg9u4px7dle5br6/branch/master?svg=true)](https://ci.appveyor.com/project/HoudiniCollector/common-restcontracts/branch/master)
 
-Provides a set of interfaces an classes that the Collector Common RestClient and Collector Common RestApi will understand.
+Provides a set of interfaces and classes that the Collector Common RestClient and Collector Common RestApi will understand.
 
-## Resources identifiers and Contracts
+## Resource identifiers and Contracts
 
 ### Resource identifier
-First, we need to introduce the concept of 'resource-identifier'. The resource identifier represents the resource location.
-The resource identifier might contain variables, for instance, the resource might point to a specific resource.
+First, we need to introduce the concept of 'resource identifier'. The resource identifier represents the resource location.
+The resource identifier might contain properties, identifying a resource e.g. by its id.
 
 The class must implement IResourceIdentifier. 
 
@@ -22,9 +22,11 @@ public class MyEndpointResourceIdentifier : IResourceIdentifier
 ```
 
 ### Usage without response
-Subclass the  RequestBase<TIidentifier> class and provide your resource identifier, the HTTPMethod, and the ConfigurationKey.
-All requests to the same api will normally have the same configuration key (more on this, can be found in Common.RestClient).
-Example PUT request, (No response object):
+Sub class the  RequestBase<TIidentifier> class and provide your resource identifier, the HTTP Method and the ConfigurationKey.
+
+All requests to the same api will normally have the same configuration key (more on this can be found in Common.RestClient).
+
+Example PUT request (no response object):
 
 ```csharp
 public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier> 
@@ -39,13 +41,13 @@ public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<My
 	/// <returns>The HTTP method for this request</returns>
 	public override HttpMethod GetHttpMethod() => HttpMethod.PUT;
 	
-	/// <returns>The identifiaction for this api</returns>
+	/// <returns>The identification for this api</returns>
 	public override string GetConfigurationKey() => "MyApiContractKey";
 }
 ```
 
 ### Usage with response 
-Subclass the abstract RequestBase<TIidentifier, TResponse>, and provide your response type.
+Sub class the abstract RequestBase<TIdentifier, TResponse> and provide your response type.
 
 ```csharp
 public class MyEndpointGETRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier, MyEndpointGetResponse> 
@@ -58,11 +60,11 @@ public class MyEndpointGETRequest<MyEndpointResourceIdentifier> : RequestBase<My
 	/// <returns>The HTTP method for this request</returns>
 	public override HttpMethod GetHttpMethod() => HttpMethod.GET;
 	
-	/// <returns>The identifiaction for this api</returns>
+	/// <returns>The identification for this api</returns>
 	public override string GetConfigurationKey() => "MyApiContractKey";
 }
 ```
-Where the response class is just an POCO
+Where the response class is just a POCO
 ```csharp
 public class MyEndpointGetResponse
 {
@@ -71,9 +73,9 @@ public class MyEndpointGetResponse
 ```
 
 ## Contract Validation
-It's possible to have validation of the properties for a given Request. (Default is no validation)
+By default, no validation is enabled, but it is possible to have validation of the properties for a given Request.
 
-In order to provide a validator to for the Request, override the ValidateRequest() method: 
+In order to provide a validator for the Request, override the ValidateRequest() method: 
 
 ```csharp
 public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier> 
