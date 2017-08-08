@@ -29,7 +29,7 @@ All requests to the same api will normally have the same configuration key (more
 Example PUT request (no response object):
 
 ```csharp
-public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier> 
+public class MyEndpointPUTRequest : RequestBase<MyEndpointResourceIdentifier> 
 {
 	public MyEndpointPUTRequest(MyEndpointResourceIdentifier resourceIdentifier)
 		: base(resourceIdentifier)
@@ -50,7 +50,7 @@ public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<My
 Sub class the abstract RequestBase<TIdentifier, TResponse> and provide your response type.
 
 ```csharp
-public class MyEndpointGETRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier, MyEndpointGetResponse> 
+public class MyEndpointGETRequest : RequestBase<MyEndpointResourceIdentifier, MyEndpointGetResponse> 
 {
 	public MyEndpointGETRequest(MyEndpointResourceIdentifier resourceIdentifier)
 		: base(resourceIdentifier)
@@ -78,7 +78,7 @@ By default, no validation is enabled, but it is possible to have validation of t
 In order to provide a validator for the Request, override the ValidateRequest() method: 
 
 ```csharp
-public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<MyEndpointResourceIdentifier> 
+public class MyEndpointPUTRequest : RequestBase<MyEndpointResourceIdentifier> 
 {
 	public MyEndpointPUTRequest(MyEndpointResourceIdentifier resourceIdentifier)
 		: base(resourceIdentifier)
@@ -93,7 +93,7 @@ public class MyEndpointPUTRequest<MyEndpointResourceIdentifier> : RequestBase<My
 	/// <returns>The HTTP method for this request</returns>
 	public override HttpMethod GetHttpMethod() => HttpMethod.PUT;
 	
-	/// <returns>The identifiaction for this api</returns>
+	/// <returns>The identification for this api</returns>
 	public override string GetConfigurationKey() => "MyApiContractKey";
 	
 	/// <summary>
