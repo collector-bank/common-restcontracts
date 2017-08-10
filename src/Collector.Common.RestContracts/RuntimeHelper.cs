@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Reflection;
 
 namespace Collector.Common.RestContracts
 {
     using System.Reflection;
-
     public class RuntimeHelper
     {
         private static readonly Func<Type, object> getUninitializedObjectDelegate =

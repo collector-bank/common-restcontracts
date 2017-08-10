@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-		<TargetFrameworks>netstandard16</TargetFrameworks>
+		<TargetFrameworks>netstandard16;net46</TargetFrameworks>
 		<AssemblyName>Collector.Common.RestContracts</AssemblyName>
 		<PackageId>Collector.Common.RestContracts</PackageId>
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -19,9 +19,7 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Diagnostics.Contracts" Version="4.3.0" />
 	<PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
