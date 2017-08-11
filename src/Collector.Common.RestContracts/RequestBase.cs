@@ -1,9 +1,10 @@
 ﻿namespace Collector.Common.RestContracts
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using System.Runtime.Serialization;
+
     using Interfaces;
 
     /// <summary>
@@ -42,7 +43,7 @@
         /// </summary>
         protected RequestBase(TResourceIdentifier resourceIdentifier)
         {
-            _resourceIdentifier = resourceIdentifier ?? (TResourceIdentifier)FormatterServices.GetUninitializedObject(typeof(TResourceIdentifier));
+            _resourceIdentifier = resourceIdentifier ?? throw new ArgumentNullException(nameof(resourceIdentifier));
         }
 
         /// <summary>
