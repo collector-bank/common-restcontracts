@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-		<TargetFrameworks>netstandard16;net46</TargetFrameworks>
+		<TargetFrameworks>netstandard16;net45</TargetFrameworks>
 		<AssemblyName>Collector.Common.RestContracts</AssemblyName>
 		<PackageId>Collector.Common.RestContracts</PackageId>
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -17,9 +17,5 @@
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 	  <PackageIconUrl>https://raw.githubusercontent.com/collector-bank/common-restcontracts/master/icon.png</PackageIconUrl>
 	</PropertyGroup>
-
-  <ItemGroup>
-	<PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
-  </ItemGroup>
 
 </Project>
