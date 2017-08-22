@@ -1,5 +1,6 @@
 ﻿namespace Collector.Common.RestContracts
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -42,7 +43,7 @@
         /// </summary>
         protected RequestBase(TResourceIdentifier resourceIdentifier)
         {
-            _resourceIdentifier = resourceIdentifier;
+            _resourceIdentifier = resourceIdentifier ?? throw new ArgumentNullException(nameof(resourceIdentifier));
         }
 
         /// <summary>
