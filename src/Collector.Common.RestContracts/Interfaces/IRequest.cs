@@ -29,6 +29,14 @@
         /// </summary>
         /// <returns>A list of validation error info's.</returns>
         IEnumerable<ErrorInfo> GetValidationErrors();
+
+        string GetRawRequestContentForLogging(string rawContent);
+
+        string GetRequestContentForLogging(string rawContent);
+
+        string GetRawResponseContentForLogging(string rawContent, string contentType);
+
+        string GetResponseContentForLogging(string rawContent, string contentType);
     }
 
     public interface IRequest<out TResourceIdentifier> : IRequest where TResourceIdentifier : class, IResourceIdentifier
