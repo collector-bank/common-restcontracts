@@ -68,12 +68,19 @@
         protected RequestBase(TResourceIdentifier resourceIdentifier)
         {
             _resourceIdentifier = resourceIdentifier ?? throw new ArgumentNullException(nameof(resourceIdentifier));
+
+            Headers = new Dictionary<string, string>();
         }
 
         /// <summary>
         /// Gets the context.
         /// </summary>
         public virtual string Context { get; set; }
+
+        /// <summary>
+        /// Get or set request headers
+        /// </summary>
+        public IDictionary<string, string> Headers { get; set; }
 
         /// <summary>
         /// Gets the Http method.

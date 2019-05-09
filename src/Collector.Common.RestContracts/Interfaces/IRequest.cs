@@ -13,6 +13,11 @@
         string Context { get; set; }
 
         /// <summary>
+        /// Get or set request headers
+        /// </summary>
+        IDictionary<string, string> Headers { get; set; }
+
+        /// <summary>
         /// Gets the Http method.
         /// </summary>
         /// <returns>The Http method.</returns>
