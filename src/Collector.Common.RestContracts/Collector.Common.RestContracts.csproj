@@ -7,7 +7,7 @@
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-		<Version>9.1.0</Version>
+		<Version>9.0.3</Version>
 		<Description>Base rest contracts to be used with Common RestClient and WebApi</Description>
 		<Authors>Team Heimdal, Team Houdini</Authors>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>

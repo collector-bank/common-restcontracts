@@ -13,11 +13,6 @@
         string Context { get; set; }
 
         /// <summary>
-        /// Get or set request headers
-        /// </summary>
-        IDictionary<string, string> Headers { get; set; }
-
-        /// <summary>
         /// Gets the Http method.
         /// </summary>
         /// <returns>The Http method.</returns>
@@ -34,6 +29,10 @@
         /// </summary>
         /// <returns>A list of validation error info's.</returns>
         IEnumerable<ErrorInfo> GetValidationErrors();
+
+        void AddHeader(string name, string value);
+
+        IReadOnlyDictionary<string, string> GetHeaders();
 
         string GetRawRequestContentForLogging(string rawContent);
 
