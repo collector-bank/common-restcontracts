@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
@@ -62,11 +63,14 @@
         // Needs to be set by reflection in the Request Binder
         private TResourceIdentifier _resourceIdentifier;
 
+        private readonly IDictionary<string, string> _headers;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestBase{TResourceIdentifier}"/> class.
         /// </summary>
         protected RequestBase(TResourceIdentifier resourceIdentifier)
         {
+            _headers = new Dictionary<string, string>();
             _resourceIdentifier = resourceIdentifier ?? throw new ArgumentNullException(nameof(resourceIdentifier));
         }
 
@@ -74,7 +78,7 @@
         /// Gets the context.
         /// </summary>
         public virtual string Context { get; set; }
-
+        
         /// <summary>
         /// Gets the Http method.
         /// </summary>
@@ -86,6 +90,22 @@
         /// </summary>
         /// <returns></returns>
         public TResourceIdentifier GetResourceIdentifier() => _resourceIdentifier;
+
+        /// <summary>
+        /// Add a request header
+        /// </summary>
+        /// <param name="name">Header name</param>
+        /// <param name="value">Header value</param>
+        public void AddHeader(string name, string value)
+        {
+            // Add or overwrite header value
+            _headers[name] = value;
+        }
+
+        public IReadOnlyDictionary<string, string> GetHeaders()
+        {
+            return new ReadOnlyDictionary<string, string>(_headers);
+        }
 
         /// <summary>
         /// Gets the key for loading base URL, authentication logic, logging etc..
@@ -176,5 +196,7 @@
         protected virtual JObject ResponseDataRootSelector(JObject jObject) => jObject.Properties().SingleOrDefault(p => p.Name == "Data")?.Value as JObject ?? jObject;
 
         protected virtual JObject RequestDataRootSelector(JObject jObject) => jObject;
+
+        public bool ShouldSerializeHeaders() => false;
     }
 }

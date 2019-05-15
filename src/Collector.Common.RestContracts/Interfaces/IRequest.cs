@@ -30,6 +30,10 @@
         /// <returns>A list of validation error info's.</returns>
         IEnumerable<ErrorInfo> GetValidationErrors();
 
+        void AddHeader(string name, string value);
+
+        IReadOnlyDictionary<string, string> GetHeaders();
+
         string GetRawRequestContentForLogging(string rawContent);
 
         string GetRequestContentForLogging(string rawContent);
